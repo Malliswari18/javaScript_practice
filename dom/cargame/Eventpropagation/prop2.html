@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+      }
+      .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .parent {
+        height: 500px;
+        width: 550px;
+        border: solid;
+        background-color: bisque;
+      }
+      .box {
+        height: 400px;
+        width: 450px;
+        background-color: blueviolet;
+      }
+      .btn {
+        padding: 10px 20px;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <div class="parent flex">
+      <div class="box flex">
+        <button class="btn">Click !!</button>
+      </div>
+    </div>
+
+    <script>
+      let body = document.body;
+      let parent = document.querySelector(".parent");
+      let box = document.querySelector(".box");
+      let btn = document.querySelector(".btn");
+      body.addEventListener(
+        "click",
+        (e) => {
+            e.stopPropagation()
+          console.log("body is clicked");
+        }
+      );
+      parent.addEventListener(
+        "click",
+        (e) => {
+            e.stopPropagation()
+          console.log("parent is clicked");
+        }
+      );
+      box.addEventListener(
+        "click",
+        (e) => {
+            e.stopPropagation()
+          console.log("box is clicked");
+        }
+      );
+      btn.addEventListener(
+        "click",
+        (e) => {
+            e.stopPropagation()
+          console.log("btn is clicked");
+        }
+      );
+    </script>
+  </body>
+</html>

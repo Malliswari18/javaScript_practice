@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            font-size: 26px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="box" style="height: 200px; width: 200px; border: solid;">
+    <h1 class="color"></h1>
+    </div>
+    <button class="btn">Generate Color </button>
+    
+
+    <script>
+        let box=document.querySelector('.box')
+        let h2 = document.querySelector('.color')
+        let btn = document.querySelector('.btn')
+        let body = document.body;
+        function randomColor(){
+            let r = Math.round(Math.random()*255)
+            let g = Math.round(Math.random()*255)
+            let b = Math.round(Math.random()*255)
+            return `rgb(${r} , ${g} , ${b})`
+        }
+        btn.addEventListener('click' , ()=>{
+            let c = randomColor()
+            box.style.backgroundColor = c
+            h2.innerHTML = c
+        })
+        
+    </script>
+</body>
+</html>

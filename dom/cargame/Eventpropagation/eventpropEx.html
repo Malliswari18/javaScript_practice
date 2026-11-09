@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .quesContainer {
+        margin: 50px;
+      }
+      .ques {
+        height: 100px;
+        border: solid;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 24px;
+      }
+      button {
+        font-size: 24px;
+        padding: 10px 20px;
+      }
+      .answer {
+        border: solid;
+        padding: 10px;
+        font-size: 22px;
+        display: none;
+        border-top: none;
+      }
+      .block {
+        display: block;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="quesContainer">
+      <div class="ques">
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+          dolor sit amet.
+        </h3>
+        <button><i class="fa-solid fa-angle-down"></i></button>
+      </div>
+      <p class="answer">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos blanditiis
+        sint mollitia pariatur eveniet alias aliquid suscipit. Quasi ducimus
+        perferendis commodi, eum officiis tempora optio iusto, maiores unde
+        excepturi perspiciatis.
+      </p>
+    </div>
+    <script>
+      let quesContainer = document.querySelector(".quesContainer");
+      let ans = document.querySelector(".answer");
+      let btn = document.querySelector("button");
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation()
+        ans.classList.toggle("block");
+        if (ans.classList.contains("block")) {
+          btn.innerHTML = '<i class="fa-solid fa-chevron-up"></i>';
+        } else {
+          btn.innerHTML = '<i class="fa-solid fa-angle-down"></i>';
+        }
+      });
+
+      quesContainer.addEventListener('click' , ()=>{
+        quesContainer.style.background = 'red'
+      })
+    </script>
+  </body>
+</html>

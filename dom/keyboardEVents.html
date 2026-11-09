@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>key boardEvents</h1>
+    <input type="text" id="inp1" placeholder="type something">
+    <script>
+        let inp1=document.querySelector('#inp1');
+        inp1.addEventListener("keydown",()=>{
+            console.log('key is down');
+        })
+        inp1.addEventListener("keypress",(e)=>{
+            // console.log("key is pressed");
+            console.log(e.key);
+        });
+        inp1.addEventListener("keyup",()=>{
+            console.log("key is up");
+                });
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .body{
+             display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        }
+      .box {
+       
+        width: 350px;
+        height: 250px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      colors:
+      <button onclick="theme('red')">Red</button>
+      <button onclick="theme('yellow')">Yellow</button>
+      <button onclick="theme('blue')">Blue</button>
+      <button onclick="theme('green')">Green</button>
+
+    </p>
+    <p>
+    Format:
+    <button onclick="formatText('uppercase')">Uppercase</button>
+    <button onclick="formatText('lowercase')">Lowercase</button>
+    <button onclick="formatText('capitalize')">Capitalize</button>
+   </p>
+   <p>
+    Content:
+    <button onclick="contentText('Hi')">Hi</button>
+    <button onclick="contentText('Hello')">Hello</button>
+    <button onclick="contentText('Bye')">Bye</button>
+   </p>
+    <div class="box"></div>
+
+    <script>
+      let body = document.body;
+      let btn1 = document.querySelector("button");
+      let box = document.querySelector(".box");
+
+      function theme(color) {
+        box.style.backgroundColor=color;
+      }
+      function formatText(format) {
+        box.style.textTransform = format;
+        }
+        function contentText(text) {
+        box.innerHTML = text;
+    }
+    </script>
+  </body>
+</html>

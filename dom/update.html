@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <li class="list">list</li> -->
+    <ol class="fruits">
+
+    </ol>
+    <ol class="veg"></ol>
+    <script>
+        // let list=document.querySelector('.list')
+        // for(let i=1;i<=20;i++){
+        //     list.innerHTML+='<li>list-${i}</li>'
+        // }
+        // let fruits = ['banana', 'apple', 'mango', 'grapes'];
+        // let fruitsList = document.querySelector('.fruits');
+
+        // fruits.forEach((element) => {
+        //     fruitsList.innerHTML += `<li>${element}</li>`;
+        // });
+        let vegList=['onion','potao','garlic'];
+        let veg=document.querySelector('.veg');
+        // for(let element of veg){vegList.innerHTML+='<li>${element}</li>'
+
+        // }
+        veg.forEach((element)=>{
+            vegList.innerHTML+='<li>${element}</li>';
+
+        });
+
+    </script>
+</body>
+</html>

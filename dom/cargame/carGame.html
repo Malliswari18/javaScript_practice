@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .body{
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        height: 100vh;
+       }
+        .car img{
+           height: 100px;
+        }
+        .car{
+          transition:  0.5s ease all;
+
+        }
+        .reverse{
+            transform:rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="body">  
+    <div class="car" style="position: relative;top:0px;left:0px;">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnyfo97ltDkcIez_OkjzbxJ3m2QvCUPt8aQk0N7Nmh9g&s=10">
+    </div>
+    </div>
+    <script>
+    
+        let hornAudio=new Audio('./horn.wav')
+        let cImg=document.querySelector('.car img')
+        let car=document.querySelector('.car')
+        window.addEventListener('keypress',(e)=>{
+            if(e.key=='w'){
+                car.style.top=parseInt(car.style.top)-10+'px';
+            }
+            if(e.key=='s'){
+                car.style.top=parseInt(car.style.top)+10+'px';
+            }
+            if(e.key=='a'){
+                car.style.left=parseInt(car.style.left)-10+'px';
+            }
+            if(e.key=='d'){
+                car.style.left=parseInt(car.style.left)+10+'px';
+            }
+            if(e.key=='c'){
+                cImg.src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTEwL3Jhd3BpeGVsb2ZmaWNlNF9yZWFsaXN0aWNfdG9wX3ZpZXdfcGhvdG9fb2ZfYV9zdXZfY2FyX2lzb2xhdGVkX18wNzVmMDIzNy1kYTMzLTQxN2UtODE2Ny0yYTY4NTBlYTUwMmIucG5n.png"
+            }
+            if(e.key=='h'){
+                hornAudio.play();
+            }
+            if(e.key=='r'){
+                car.classList.toggle('reverse');
+            }
+        })
+    </script>
+  
+    
+</body>
+</html>
